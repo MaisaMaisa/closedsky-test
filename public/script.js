@@ -52,7 +52,7 @@ function fetchFlights() {
     flights.forEach(flight => {
         if (flight.latitude && flight.longitude) {
           const marker = L.circleMarker([flight.latitude, flight.longitude], {
-            radius: 5,           // size of the dot
+            radius: 1,           // size of the dot
             fillColor: 'blue',   // fill color
             color: '#0033cc',    // stroke color (border)
             weight: 1,           // border thickness
@@ -71,7 +71,7 @@ function fetchFlights() {
 fetchFlights();
 
 // Refresh every 15 seconds
-setInterval(fetchFlights, 15000);
+setInterval(fetchFlights, 5000);
 
 const markers = L.markerClusterGroup();
 
